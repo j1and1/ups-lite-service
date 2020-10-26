@@ -76,6 +76,7 @@ while True:
             pluggedIn = GPIO.input(4) == GPIO.HIGH
             if not pluggedIn:
                 Shutdown()
+                break
             else:
                 NotifyCancelShutdown()
         else:
