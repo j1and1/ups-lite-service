@@ -64,7 +64,11 @@ while True:
     voltage = readVoltage(bus)
     charge = readCapacity(bus)
     pluggedIn = GPIO.input(4) == GPIO.HIGH
-
+    
+    if voltage == 0 or charge == 0:
+        time.sleep(2)
+        continue
+        
     if not pluggedIn:
         if charge <= 20.0:
             WarnAboutShutdown()
