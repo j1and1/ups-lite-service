@@ -33,10 +33,10 @@ def PowerOnReset(bus):
     bus.write_word_data(address, 0xfe,0x0054)
 
 def WarnAboutShutdown():
-    os.system('/usr/bin/notify-send -t 36000 "System going to power off" "Low UPS battery... Powering down in 10 seconds."')
+    os.system('wall "System going to power off - Low UPS battery... Powering down in 10 seconds."')
 
 def NotifyCancelShutdown():
-    os.system('/usr/bin/notify-send -t 36000 "UPS-Plugged in" "Shutdown canceled."')
+    os.system('wall "UPS-Plugged in - Shutdown canceled."')
 
 def Shutdown():
     os.system('sudo shutdown')
