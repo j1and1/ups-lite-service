@@ -8,7 +8,7 @@ After=multi-user.target
 
 [Service]
 Type=idle
-ExecStart=/usr/bin/python3 {0}/ups_service.py > /dev/null
+ExecStart=/usr/bin/python3 {0}/ups_service.py -v 1 > /dev/null
 
 [Install]
 WantedBy=multi-user.target
